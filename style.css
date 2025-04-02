@@ -1,0 +1,338 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main content background */
+body {
+    width: 100%;
+    height: 120vh;
+    /* Muted Animated Gradient Background */
+    background: linear-gradient(to bottom right, #ececec, #f8bbd0, #bbdefb, #fff9c4, #c8e6c9, #ececec);
+    background-size: 300% 300%;
+    animation: colorShift 20s infinite alternate; /* Unified animation name */
+    color: #1f1e1e;
+}
+
+@keyframes colorShift { /* Unified keyframes */
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Welcome container (welcome slide up window) */
+#welcome {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* Muted Gradient Welcome Screen - Match the main website */
+    background: linear-gradient(to bottom right, rgba(236, 236, 236, 0.95), rgba(248, 187, 208, 0.95), rgba(187, 222, 251, 0.95), rgba(255, 249, 196, 0.95), rgba(200, 230, 201, 0.95), rgba(236, 236, 236, 0.95));
+    background-size: 300% 300%;
+    animation: colorShift 20s infinite alternate; /* Unified animation name */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    border-bottom-left-radius: 50% 30px;
+    border-bottom-right-radius: 50% 30px;
+    /*backdrop-filter: blur(5px);  Optional: Subtle blur */
+}
+
+/* After animation class is added */
+.slide-up {
+    transform: translateY(-100%);
+}
+
+/* Greeting text animation */
+#greetings {
+    color: white;
+    font-size: 3.2rem;
+    font-weight: 500;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    position: relative;
+}
+
+#left-section {
+    position: absolute;
+    top: 200px;
+    left: 150px;
+    width: 260px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#center-section {
+    position: fixed;
+    width: 700px;
+    height: 480px;
+    top: 150px;
+    left: 500px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+#Name {
+    position: absolute;
+    top: 100px;
+    left: 60px;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #2c3e50;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+#bio {
+    position: absolute;
+    top: 167px;
+    left: 60px;
+    width: 580px;
+    font-size: 1em;
+    line-height: 1.6;
+    font-weight: 400;
+    color: #555;
+    overflow-wrap: break-word;
+    margin-bottom: 25px;
+    /* --- Scrollbar Styling --- */
+    scrollbar-width: thin;
+    scrollbar-color: #a8a8a8 #f5f5f5;
+    /* Webkit (Chrome, Safari, etc.) */
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+    &::-webkit-scrollbar-track {
+        background: #f5f5f5;
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #a8a8a8;
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: #888;
+    }
+}
+
+#external {
+    position: absolute;
+    bottom: 170px;
+    left: 62px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+a:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+#left-section div {
+    width: 250px;
+    height: 50px;
+    padding: 15px 20px;
+    border: none;
+    background-color: transparent;
+    transition: all 0.15s ease-in-out;
+    border-radius: 30px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1em;
+    color: #2c3e50;
+}
+
+#left-section div .year {
+    margin-left: auto;
+    font-size: 0.8em;
+    color: #666;
+}
+
+#left-section div:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(204, 204, 204, 0.3);
+}
+
+#left-section div:hover .year {
+    opacity: 1;
+}
+
+#left-section div:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgba(238, 238, 238, 0.3);
+}
+
+.project-card {
+    /*background-color: #f5f3f3;*/ /* Original background */
+    background: linear-gradient(to bottom right, #f0f0f0, #f8e8f0, #e0f0ff, #ffffe0, #f0fff0, #f0f0f0);
+    background-size: 300% 300%;
+    animation: colorShift 20s infinite alternate; /* Unified animation name */
+    border: 1px solid rgba(204, 204, 204, 0.5); /* Muted border */
+    padding: 25px;
+    border-radius: 12px;
+    /*box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);*/ /* Original shadow */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Softer, slightly larger shadow */
+    display: none;
+    position: fixed;
+    width: 800px;
+    height: 80vh;
+    max-height: 90vh;
+    top: 100px;
+    left: 480px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-y: auto;
+    backdrop-filter: blur(5px); 
+}
+
+.project-card h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    border-bottom: 1px solid rgba(44, 62, 80, 0.2); /* Muted border bottom */
+    padding-bottom: 10px;
+}
+
+.project-card h3 {
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #34495e;
+}
+
+.project-card h4 {
+    font-size: 1.2em;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    color: #2980b9;
+    opacity: 0.8; /* Slightly faded heading */
+}
+
+.project-card p {
+    margin-bottom: 15px;
+    color: #444; /* Darker paragraph text */
+}
+
+.project-card ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.project-card li {
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.project-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Subtle image shadow */
+}
+
+.close-button {
+    float: right;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    position: relative;
+    top: -15px;
+    color: #555; /* Muted close button */
+}
+
+/* General Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px; /* Thin scrollbar */
+    height: 8px; /* Thin scrollbar for horizontal */
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(240, 240, 240, 0.5); /* Very light, subtle track */
+    border-radius: 4px; /* Slightly rounded corners */
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(150, 150, 150, 0.5); /* Muted gray thumb */
+    border-radius: 4px; /* Slightly rounded corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(120, 120, 120, 0.6); /* Darker on hover */
+}
+
+/* Specific Scrollbar Styling for #bio */
+#bio::-webkit-scrollbar-track {
+    background: rgba(245, 243, 243, 0.7); /* Match card background */
+}
+
+#bio::-webkit-scrollbar-thumb {
+    background: rgba(180, 180, 180, 0.6); /* Slightly darker */
+}
+
+#bio::-webkit-scrollbar-thumb:hover {
+    background: rgba(150, 150, 150, 0.7);
+}
+
+/* Specific Scrollbar Styling for .project-card */
+.project-card::-webkit-scrollbar-track {
+    background: rgba(245, 243, 243, 0.7); /* Match card background */
+}
+
+.project-card::-webkit-scrollbar-thumb {
+    background: rgba(180, 180, 180, 0.6); /* Slightly darker */
+}
+
+.project-card::-webkit-scrollbar-thumb:hover {
+    background: rgba(150, 150, 150, 0.7);
+}
+
+/* Firefox Scrollbar Styling (Alternative) */
+/* Firefox also supports scrollbar styling, though it's less customizable */
+/* Firefox scrollbar styling */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(150, 150, 150, 0.5) rgba(240, 240, 240, 0.5);
+}
+
+#bio{
+    scrollbar-color: rgba(180, 180, 180, 0.6) rgba(245, 243, 243, 0.7);
+}
+
+.project-card{
+    scrollbar-color: rgba(180, 180, 180, 0.6) rgba(245, 243, 243, 0.7);
+}
