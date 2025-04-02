@@ -193,15 +193,13 @@ a:focus {
 }
 
 .project-card {
-    /*background-color: #f5f3f3;*/ /* Original background */
     background: linear-gradient(to bottom right, #f0f0f0, #f8e8f0, #e0f0ff, #ffffe0, #f0fff0, #f0f0f0);
     background-size: 300% 300%;
-    animation: colorShift 20s infinite alternate; /* Unified animation name */
-    border: 1px solid rgba(204, 204, 204, 0.5); /* Muted border */
+    animation: colorShift 20s infinite alternate;
+    border: 1px solid rgba(204, 204, 204, 0.5);
     padding: 25px;
     border-radius: 12px;
-    /*box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);*/ /* Original shadow */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Softer, slightly larger shadow */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     display: none;
     position: fixed;
     width: 800px;
@@ -213,14 +211,14 @@ a:focus {
     line-height: 1.6;
     color: #333;
     overflow-y: auto;
-    backdrop-filter: blur(5px); 
+    backdrop-filter: blur(5px);
 }
 
 .project-card h2 {
     font-size: 2em;
     margin-bottom: 20px;
     color: #2c3e50;
-    border-bottom: 1px solid rgba(44, 62, 80, 0.2); /* Muted border bottom */
+    border-bottom: 1px solid rgba(44, 62, 80, 0.2);
     padding-bottom: 10px;
 }
 
@@ -236,12 +234,12 @@ a:focus {
     margin-top: 15px;
     margin-bottom: 8px;
     color: #2980b9;
-    opacity: 0.8; /* Slightly faded heading */
+    opacity: 0.8;
 }
 
 .project-card p {
     margin-bottom: 15px;
-    color: #444; /* Darker paragraph text */
+    color: #444;
 }
 
 .project-card ul {
@@ -260,7 +258,7 @@ a:focus {
     height: auto;
     border-radius: 8px;
     margin-bottom: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Subtle image shadow */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .close-button {
@@ -272,67 +270,52 @@ a:focus {
     border-radius: 4px;
     position: relative;
     top: -15px;
-    color: #555; /* Muted close button */
+    color: #555;
 }
 
 /* General Scrollbar Styling */
 ::-webkit-scrollbar {
-    width: 8px; /* Thin scrollbar */
-    height: 8px; /* Thin scrollbar for horizontal */
+    width: 8px;
+    height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(240, 240, 240, 0.5); /* Very light, subtle track */
-    border-radius: 4px; /* Slightly rounded corners */
+    background: rgba(240, 240, 240, 0.5);
+    border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(150, 150, 150, 0.5); /* Muted gray thumb */
-    border-radius: 4px; /* Slightly rounded corners */
+    background: rgba(150, 150, 150, 0.5);
+    border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(120, 120, 120, 0.6); /* Darker on hover */
+    background: rgba(120, 120, 120, 0.6);
 }
 
-/* Specific Scrollbar Styling for #bio */
-#bio::-webkit-scrollbar-track {
-    background: rgba(245, 243, 243, 0.7); /* Match card background */
+#bio::-webkit-scrollbar-track, .project-card::-webkit-scrollbar-track {
+    background: rgba(245, 243, 243, 0.7);
 }
 
-#bio::-webkit-scrollbar-thumb {
-    background: rgba(180, 180, 180, 0.6); /* Slightly darker */
+#bio::-webkit-scrollbar-thumb, .project-card::-webkit-scrollbar-thumb {
+    background: rgba(180, 180, 180, 0.6);
 }
 
-#bio::-webkit-scrollbar-thumb:hover {
+#bio::-webkit-scrollbar-thumb:hover, .project-card::-webkit-scrollbar-thumb:hover {
     background: rgba(150, 150, 150, 0.7);
 }
 
-/* Specific Scrollbar Styling for .project-card */
-.project-card::-webkit-scrollbar-track {
-    background: rgba(245, 243, 243, 0.7); /* Match card background */
-}
-
-.project-card::-webkit-scrollbar-thumb {
-    background: rgba(180, 180, 180, 0.6); /* Slightly darker */
-}
-
-.project-card::-webkit-scrollbar-thumb:hover {
-    background: rgba(150, 150, 150, 0.7);
-}
-
-/* Firefox Scrollbar Styling (Alternative) */
-/* Firefox also supports scrollbar styling, though it's less customizable */
-/* Firefox scrollbar styling */
+/* Firefox Scrollbar Styling */
 * {
     scrollbar-width: thin;
     scrollbar-color: rgba(150, 150, 150, 0.5) rgba(240, 240, 240, 0.5);
 }
 
-#bio{
+#bio, .project-card {
     scrollbar-color: rgba(180, 180, 180, 0.6) rgba(245, 243, 243, 0.7);
 }
 
-.project-card{
-    scrollbar-color: rgba(180, 180, 180, 0.6) rgba(245, 243, 243, 0.7);
+/* Add the following two lines */
+#main-content, #left-section {
+    display: none;
 }
